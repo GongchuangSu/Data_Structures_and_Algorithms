@@ -32,7 +32,6 @@ public class ListDG {
         for (int i = 0; i < elen; i++) {
             EdgeNode edgeNode = new EdgeNode();
             int vi = getPosition(edges[i][0], vexs);
-            int vj = getPosition(edges[i][1], vexs);
              
             edgeNode.adjvex = edges[i][1];
             edgeNode.next = vertexNodeList[vi].firstedge;
