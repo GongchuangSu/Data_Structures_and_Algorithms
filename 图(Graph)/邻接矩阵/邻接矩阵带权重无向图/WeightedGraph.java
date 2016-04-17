@@ -5,7 +5,7 @@
  * @version v1.0
  */
 public class WeightedGraph {
-    private int[][] edges; // 邻接矩阵
+    private int[][] edges;   // 邻接矩阵
     private Object[] labels; // 标签
 
     /**
@@ -51,6 +51,7 @@ public class WeightedGraph {
      */
     public void addEdge(int source, int target, int weight) {
         edges[source][target] = weight;
+		edges[target][source] = weight;
     }
 
     /**
@@ -128,9 +129,9 @@ public class WeightedGraph {
         t.addEdge(1, 3, 15);
         t.addEdge(1, 5, 6);
         t.addEdge(2, 3, 1);
-        t.addEdge(4, 3, 3);
-        t.addEdge(4, 2, 7);
-        t.addEdge(5, 4, 3);
+		t.addEdge(2, 4, 7);
+        t.addEdge(3, 4, 3);
+        t.addEdge(4, 5, 3);
         t.print();
     }
 }
