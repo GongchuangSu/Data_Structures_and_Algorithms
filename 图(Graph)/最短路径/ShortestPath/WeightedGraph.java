@@ -1,8 +1,8 @@
 /**
  * @description 邻接矩阵表示的带有权重的无向图(AdjMatrix Weighted Undirected Graph)
- * @author GongchuangSu
- * @since 2016.04.13
- * @version v1.0
+ * @author      GongchuangSu
+ * @since       2016.04.13
+ * @version     v1.0
  */
 public class WeightedGraph {
     private int[][] edges;   // 邻接矩阵
