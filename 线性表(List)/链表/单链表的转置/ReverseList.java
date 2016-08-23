@@ -7,6 +7,19 @@
  */
 package com.gongchuangsu.list;
 
+/* 结点结构
+class Node{
+	int data;
+	Node next;
+	
+	public Node(){}
+	
+	public Node(int data){
+		this.data = data;
+	}
+}
+*/
+
 public class ReverseList {
 	
 	/**
