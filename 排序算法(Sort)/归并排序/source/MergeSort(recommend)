@@ -1,0 +1,37 @@
+import java.util.Arrays;
+
+public class MergeSort {
+	
+	public static int[] merge_sort(int[] arr){
+		int len = arr.length;
+		int[] result = new int[len];
+		for(int block = 1; block < len; block *= 2){
+			for(int start = 0; start < len; start += 2*block){
+				int low = start;
+				int mid = (start + block) < len ? (start + block) : len;
+				int high = (start + 2*block) < len ? (start + 2*block) : len; 
+				int start1 = low;
+				int start2 = mid;
+				while(start1 < mid && start2 < high){
+					result[low++] = (arr[start1] < arr[start2]) ? arr[start1++] : arr[start2++];
+				}
+				while(start1 < mid){
+					result[low++] = arr[start1++];
+				}
+				while(start2 < high){
+					result[low++] = arr[start2++];
+				}
+			}
+			int[] temp = arr;
+			arr = result;
+			result = temp;
+		}
+		return arr;
+	}
+	
+	public static void main(String[] args) {
+		int[] arr = {2,1,4,5,3,6,9,8,7};
+		System.out.println("排序前：" + Arrays.toString(arr));
+		System.out.println("排序后：" + Arrays.toString(merge_sort(arr)));
+	}
+}
